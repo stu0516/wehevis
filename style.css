@@ -1,0 +1,158 @@
+/* General formatting */
+body {
+	padding: 0 10px;
+	font: 18px/1.5 -apple-system, BlinkMacSystemFont, "avenir next",avenir, "Segoe UI", "lucida grande", "helvetica neue", helvetica, "Fira Sans",roboto, noto, "Droid Sans", cantarell, oxygen, ubuntu, "franklin gothic medium", "century gothic", "Liberation Sans",
+	sans-serif;
+}
+
+h1, h2, h3 {
+	line-height: 1.2
+}
+
+/* Your text should be in a nice narrow column */
+.content-column {
+
+	max-width: 650px;
+	margin: 40px auto;
+}
+
+/*Clear selections button is on the right*/
+.table-holder{
+	float: right;
+}
+
+/* We align world map and the pie chart together*/
+.map-holder{
+	width: 85%;
+	height: 100%;
+	display: flex;
+}
+
+/*The worldmap takes 75% of space*/
+.world-holder{
+	width: 85%;
+}
+
+/*The pie chart takes 25 %*/
+.piechart-holder {
+	width: 15%;
+}
+
+/* We also align line chart and the group bar chart together*/
+.holder{
+	width: 85%;
+	height: 100%;
+	display: flex;
+}
+
+.linechart-holder{
+	top:50%;
+	right:0;
+	height:100%;
+	width:55%;
+}
+
+/*Group bar chart takes 45%*/
+.groupbarchart-holder {
+	width: 45%;
+}
+
+/*Line chart takes 60%*/
+.line-holder{
+	width: 60%;
+	height: 30%;
+	display: flex;
+}
+
+/*Style for country labels*/
+.country-label {
+  fill: #2E768C;
+  font-size: 20px;
+  font-weight: 300;
+  text-anchor: middle;
+}
+
+/*Style for the line in line chart*/
+.linePath {
+  fill: none;
+  stroke: #2E768C;
+  stroke-width: 1.5;
+}
+
+.axisLabel {
+  fill: Black;
+}
+
+/* Fork on GitHub ribbon via https://codepo8.github.io/css-fork-on-github-ribbon/# */
+#forkongithub a{
+	background:#00F;
+	color:#fff;
+	text-decoration:none;
+	font-family:arial,sans-serif;
+	text-align:center;
+	font-weight:bold;
+	padding:5px 40px;
+	font-size:1rem;
+	line-height:1.4rem;
+	position:relative;
+	transition:0.5s;
+}
+#forkongithub a:hover{
+	background:#118;
+	color:#fff;
+}
+#forkongithub a::before,#forkongithub a::after{
+	content:"";
+	width:100%;
+	display:block;
+	position:absolute;
+	top:1px;
+	left:0;
+	height:1px;
+	background:#fff;
+}
+#forkongithub a::after{
+	bottom:1px;
+	top:auto;
+}
+@media screen and (min-width:1000px){
+	#forkongithub{
+		position:absolute;
+		display:block;
+		top:0;
+		right:0;
+		width:200px;
+		overflow:hidden;
+		height:200px;
+		z-index:9999;
+	}
+	#forkongithub a{
+		width:200px;
+		position:absolute;
+		top:60px;
+		right:-60px;
+		transform:rotate(45deg);
+		-webkit-transform:rotate(45deg);
+		-ms-transform:rotate(45deg);
+		-moz-transform:rotate(45deg);
+		-o-transform:rotate(45deg);
+		box-shadow:4px 4px 10px rgba(0,0,0,0.8);
+	}
+}
+
+#selectlabel{
+
+	font-size: 16px;
+}
+
+/*Styles for tooltips*/
+div.tooltip, div.tooltip-country{
+	color: #222;
+	background-color: #fff;
+	padding: .5em;
+	text-shadow: #f5f5f5 0 1px 0;
+	border-radius: 2px;
+	opacity: 0.9;
+	position: absolute;
+
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<!-- Metadata -->
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Title -->
+		<title>WeheVis</title>
+
+		<!-- CSS Styling -->
+		<link rel="stylesheet" href="style.css" />
+
+		<!-- Favicons -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="favicons/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="favicons/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="favicons/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="favicons/site.webmanifest" />
+		<link rel="shortcut icon" href="favicons/favicon.ico" />
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="msapplication-config" content="favicons/browserconfig.xml" />
+		<meta name="theme-color" content="#ffffff" />
+	</head>
+
+	<!-- Main page content -->
+	<body>
+
+		<!-- Your writeup goes here -->
+		<div class="content-column">
+			<!-- <h1>Project Team 01: Net Neutrality Viz, CS 7250 S20</h1> -->
+
+			<h1>Motivation</h1>
+
+			<p>
+				<em>
+					Net neutrality, or the notion that Internet service providers (ISPs)
+					are not giving equal services to different parties, has been
+					discussed actively over the last few years. Wehe is a large-scale,
+					longitude empirical study of ISPs’ traffic management policies that
+					violate net neutrality principles.
+				</em>
+			</p>
+
+			<p>
+				<em
+					>Expectation: Given that the Wehe dataset is collected from the
+					large-scale and longitude empirical study, it is not feasible to
+					display the raw data without a proper visualization. This
+					visualization project is trying to provide an interactive, focused
+					visualization to help individual users to understand the meaning of
+					the data.</em
+				>
+			</p>
+
+			<h2>
+				Net Neutrality Violation and the
+				<a href="https://dd-origin.meddle.mobi/">Wehe Project</a>
+			</h2>
+
+			<h3>What does Wehe do?</h3>
+
+			<em>Paragraph from the original Wehe website</em>
+
+			<p>
+				Wehe uses
+				<strong
+					>your device to exchange Internet traffic recorded from real, popular
+					apps like YouTube and Spotify</strong
+				>---effectively making it look as if you are using those apps. As a
+				result, if an Internet service provider (ISP) tries to slow down
+				YouTube, Wehe would see the same behavior. We then send the same app's
+				Internet traffic, but replacing the content with randomized bytes,
+				which prevents the ISPs from classifying the traffic as belonging to
+				the app. Our hypothesis is that the randomized traffic will not cause
+				an ISP to conduct application-specific differentiation (<em>e.g.</em>,
+				throttling or blocking), but the original traffic will. We repeat these
+				tests several times to rule out noise from bad network conditions, and
+				tell you at the end whether your ISP is giving different performance to
+				an app's network traffic.
+			</p>
+
+			<h3>The Wehe Dataset</h3>
+			<p>
+				In Wehe dataset, each datapoint demonstrates whether or not the current
+				setup has detected differentiation (which has multiple runs and is
+				classified by statistical testing). For every datapoint, it records the
+				time <strong>when</strong> the test was conducted,
+				<strong>where</strong> the test was conducted,
+				<strong>which ISP</strong> was the service provider and
+				<strong>what application</strong> it tested with.
+			</p>
+
+			<h1>Visualization</h1>
+		</div>
+
+		<!-- Your visualization here -->
+		<label id = "selectlabel">Select ISP:</label>
+		<select name = "isps" id="ispselection"></select>
+		<!--<div class="isp-holder" id="ispselection">
+				<form id="isp-form">
+				<label>all</label><input type="radio" name="isp" id="all" value="all" checked>
+				<label>verizon</label><input type="radio" name="isp" id="verizon" value="verizon">
+				<label>viasat</label><input type="radio" name="isp" id="viasat" value="viasat">
+			</form>
+		</div>-->
+
+		<div class="table-holder" id="overviewtable"></div>
+
+		<div class="map-holder">
+			<div class="world-holder" id="world"></div>
+			<div class="piechart-holder" id="piechart"></div>
+		</div>
+
+		<div class="holder">
+			<div class="linechart-holder" id="linechart"></div>
+			<div class="groupbarchart-holder" id="groupbarchart"></div>
+		</div>
+
+				<!-- Scripts at the end avoid need for dealing with async, defer, or onload event handlers -->
+		<script src="lib/d3.v5.15.0/d3.min.js"></script>
+		<!--Begin Geo Libraries-->
+		<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+		<!-- <script src="https://d3js.org/d3-geo.v1.min.js"></script> -->
+		<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+		<!--End Geo Libraris-->
+
+		<script src="js/worldmap.js"></script>
+		<script src="js/overviewtable.js"></script>
+		<script src="js/ispselection.js"></script>
+		<script src="js/groupedbarchart.js"></script>
+		<!-- <script src = "js/countrymap.js"></script> -->
+		<script src="js/piechart.js"></script>
+		<script src="js/linechart.js"></script>
+		<script src="js/visualization.js"></script>
+	</body>
+</html>
